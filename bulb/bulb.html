@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bulb</title>
+  </head>
+  <body>
+    <div id="bulb-container" class="bulb-container">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="wire"></div>
+
+    <div class="switch">
+      <div class="switch-wire"></div>
+      <button onclick="onLight()" id="btn">On</button>
+      <button onclick="offLight()" id="btn">Off</button>
+    </div>
+
+    <script>
+      onLight = () => {
+        let bulb = document.getElementById("bulb-container");
+
+        let bulbTag = document.createElement("div");
+        bulbTag.className = "on";
+
+        bulb.innerHTML = "";
+        bulb.appendChild(bulbTag);
+      };
+
+      offLight = () => {
+        let bulb = document.getElementById("bulb-container");
+
+        let bulbTag = document.createElement("div");
+        bulbTag.className = "bulb-container";
+
+        bulb.innerHTML = "";
+        bulb.appendChild(bulbTag);
+      };
+    </script>
+  </body>
+</html>
