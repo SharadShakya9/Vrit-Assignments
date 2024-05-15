@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Counter</title>
 </head>
 <body>
-    <div id="counter">0</div>
+    <div class="container">
+        <div id="counter" class="counter">0</div>
 
-    <button onclick="increaseCounter()" class="btn">+</button>
-    <button onclick="decreaseCounter()" class="btn">-</button>
+        <div class="button">
+            <button onclick="increaseCounter()" id="btn">+</button>
+            <button onclick="decreaseCounter()" id="btn">-</button>
+        </div>  
+    </div>
+    
 
     <script>
         increaseCounter = () => {
