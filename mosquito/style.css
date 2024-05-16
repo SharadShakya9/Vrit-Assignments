@@ -44,3 +44,17 @@ body {
     background: rgb(187, 151, 221);
     box-shadow: 0 0 1em .5em rgb(158, 48, 172);
 }
+
+.reset {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.reset img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 0px 0px rgba(6, 64, 211, 0.921);
+}

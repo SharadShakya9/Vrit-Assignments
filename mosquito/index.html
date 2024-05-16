@@ -11,6 +11,10 @@
 
     <div class="your-score">Your Score: <span id="score">0</span></div>
 
+    <div id="reset" class="reset">
+      <img onclick="resetCounter()" src="assets/restart.png" />
+    </div>
+
     <script>
       const BOARD_WIDTH = 500;
       const BOARD_HEIGHT = 500;
@@ -48,6 +52,11 @@
           
         });
       };
+
+      resetCounter = () => {
+        score = 0
+        scoreElement.textContent = score
+      }
 
       function startGame() {
         createBoard();
