@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+}
+
+.game-board {
+    padding: 50px;
+    margin-bottom: 50px;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: inset 6px 6px 10px 0 rgba(0,0,0,2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+}
+
+.game-board:hover {
+    cursor: url('assets/rolled-up-newspaper.svg'), auto;
+}
+
+.your-score {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 15px;
+    color: rgb(187, 151, 221);
+    border: solid .25em rgb(187, 151, 221);
+    border-radius: 40px;
+    background: rgb(100, 61, 136);
+    box-shadow: 0 0 1em .5em rgb(158, 48, 172), inset 0 0 1em .5em rgb(158, 48, 172);
+    transition: all 0.3s;
+}
+
+.your-score:hover {
+    cursor: default;
+    color: black;
+    background: rgb(187, 151, 221);
+    box-shadow: 0 0 1em .5em rgb(158, 48, 172);
+}
+
+.reset {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.reset img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 0px 0px rgba(6, 64, 211, 0.921);
+}

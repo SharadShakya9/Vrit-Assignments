@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Class mosquito</title>
+</head>
+<body>
+    <div id="game-board" class="game-board"></div>
+
+    <div class="your-score">Your Score: <span id="score">0</span></div>
+
+    <div id="reset" class="reset">
+        <img id = "reset-image" src="assets/restart.png" />
+    </div>
+
+    <script>
+
+        const BOARD_WIDTH = 500
+        const BOARD_HEIGHT = 500
+        let score = 0
+
+        class Mosquito {
+            constructor(gameBoard, scoreElement, resetElement) {
+                this.gameBoard = gameBoard
+                this.scoreElement = scoreElement
+                this.resetElement = resetElement
+                this.init()
+            }
+
+            init = () =>  {
+                this.createBoard()
+                this.showMosquito()
+                this.moveMosquito()
+                this.resetElement.addEventListener("click", () => {
+                    this.resetCounter()
+                })
+            }
+
+            createBoard = () => {
+                this.gameBoard.style.width = '500px'
+                this.gameBoard.style.height = '500px'
+                this.gameBoard.style.background = "url('assets/tiles.jpg')"
+            }
+
+            showMosquito = () => {
+                let top = Math.floor(Math.random() * (BOARD_HEIGHT - 100));
+                let left = Math.floor(Math.random() * (BOARD_WIDTH - 100));
+                var mosquito = document.createElement('img')
+                mosquito.src = "assets/image.png"
+                mosquito.style.width = "40px"
+                mosquito.style.height = "40px"
+                mosquito.style.marginTop = `${top}px`
+                mosquito.style.marginLeft = `${left}px`
+                this.gameBoard.innerHTML = ""
+                this.gameBoard.appendChild(mosquito)
+
+                mosquito.addEventListener("click", () => {
+                    this.updateScore()
+                    this.clickAudio()
+                    this.showMosquito()
+                })
+            }
+
+            moveMosquito = () => {
+                setInterval(() => {
+                    this.showMosquito()
+                }, 2000)
+            }
+
+            updateScore = () => {
+                score++
+                this.scoreElement.textContent = score
+            }
+
+            clickAudio = () => {
+                const audio = new Audio("assets/090035_splatwav-91604.mp3")
+                audio.play()
+            }
+
+            resetCounter = () => {
+                score = 0
+                this.scoreElement.textContent = score
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            var gameArea = document.getElementById('game-board')
+            var scoreElement = document.getElementById('score')
+            var resetElement = document.getElementById('reset-image')
+            const game = new Mosquito(gameArea, scoreElement, resetElement)
+            game
+        })
+    </script>
+</body>
+</html>
