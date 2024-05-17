@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Class Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <input id="num1" class="input-field" type="number"/>
+        <input id="num2" class="input-field" type="number"/>
+        <button id="enter" onclick="getInputField()" type="button">Enter</button>
+    </div>
+
+    <div class="container operation">
+        <button id="add" type="button">+</button>
+        <button id="sub" type="button">-</button>
+        <button id="multiply" type="button">*</button>
+    </div>
+
+    <div id="result" class="container result">0</div>
+    
+    <script>
+        getInputField = () => {
+            var num1 = document.getElementById('num1')
+            var num2 = document.getElementById('num2')
+            var result = document.getElementById('result')
+            var add = document.getElementById('add')
+            var sub = document.getElementById('sub')
+            var multiply = document.getElementById('multiply')
+            const calc = new Calculator(parseInt(num1.value), parseInt(num2.value))
+
+            add.addEventListener("click", () => {
+                result.textContent = calc.add()
+            })
+            sub.addEventListener("click", () => {
+                result.textContent = calc.sub()
+            })
+            multiply.addEventListener("click", () => {
+                result.textContent = calc.multiply()
+            })
+        }
+
+        class Calculator {
+            constructor (num1, num2) {
+                this.num1 = num1
+                this.num2 = num2
+            }
+
+            add = () => {
+                return this.num1+this.num2
+            }
+
+            sub = () => {
+                return this.num1-this.num2
+            }
+
+            multiply = () => {
+                return this.num1*this.num2
+            }
+        }
+    </script>
+</body>
+</html>
