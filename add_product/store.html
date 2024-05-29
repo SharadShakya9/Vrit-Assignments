@@ -62,8 +62,7 @@
     <button
       type="button"
       class="btn btn-primary m-5 pull-right"
-      data-bs-toggle="modal"
-      data-bs-target="#addProductModal"
+      open-modal-button
     >
       Add Product
     </button>
@@ -75,74 +74,33 @@
     
 
     <!--Add Product Modal -->
-    <div
-      class="modal fade"
-      id="addProductModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        
-        <form action="/" id="form" class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
+    <dialog class="modal-dialog">
+      <form action="/" id="product-form" class="modal-content">
+          <h1>Add Product</h1>
           <div class="modal-body">
-            <div class="mb-3">
-              <label class="form-label">Product Title</label>
-              <input
-                type="text"
-                class="form-control title"
-                placeholder="Product Title"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Description</label>
-              <input
-                type="text"
-                class="form-control desc"
-                placeholder="Description"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Price</label>
-              <input
-                type="number"
-                class="form-control price"
-                placeholder="Price"
-                required
-              />
-            </div>
+              <div class="item-container">
+                  <label for="form-label">Product Title</label>
+                  <input type="text" class="form-control title" placeholder="Product Title" required>
+                  
+              </div>
+              <div class="item-container">
+                  <label for="form-label">Description</label>
+                  <textarea type="text" class="form-control description" placeholder="Add a description" minlength="100" required></textarea>
+
+              </div>
+              <div class="item-container">
+                  <label for="form-label">Price</label>
+                  <input type="number" class="form-control price" placeholder="Price (in $)" required>
+
+              </div>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="submit"
-              class="btn btn-primary"
-              id="add-product-button"
-            >
-              Save changes
-            </button>
+              <button type="submit" formmethod="dialog">Cancel</button>
+              <button type="submit" id="save-changes">Save Changes</button>
           </div>
-        </form>
-        <div id="error"></div>
-      </div>
-    </div>
+      </form>
+  </dialog>
+  <!--End of modal-->
 
     <!-- Footer -->
     <footer

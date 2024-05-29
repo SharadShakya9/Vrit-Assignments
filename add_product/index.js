@@ -1,4 +1,7 @@
-let formElement = document.getElementById("form")
+const formElement = document.getElementById("product-form")
+const addProductButton = document.querySelector("[open-modal-button]")
+const modal = document.querySelector(".modal-dialog")
+const saveChangesButton = document.getElementById('save-changes')
 
 loadData = () => {
     fetch("https://dummyjson.com/products")
@@ -62,32 +65,36 @@ searchData = () => {
         });
 };
 
+addProductButton.addEventListener("click", () => {
+    modal.showModal()
+})
 
-formElement.addEventListener("click", (event) => {
-    let messages = []
+modal.addEventListener("click", e => {
+    const dialogDimensions = modal.getBoundingClientRect()
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+    ) {
+        modal.close()
+    }
+})
+
+saveChangesButton.addEventListener("click", (event) => {
     event.preventDefault()
-    
-    var title = document.querySelector('.title').value
-    var description = document.querySelector('.desc').value
-    var price = parseFloat(document.querySelector('.price').value)
-    const errorElement = document.getElementById('error')
 
-    if (title === '' || title == null) {
-        messages.push('Product Title is required')
+    if (!formElement.checkValidity()) {
+        formElement.reportValidity()
+        return
     }
 
-    if (price === '' || price == null) {
-        messages.push('Price is required')
-    }
+    modal.close()
 
-    if (description.length <=300) {
-        messages.push('Description must be longer than 300 characters')
-    }
+    let title = document.querySelector('.title').value
+    let description = document.querySelector('.description').value
+    let price = document.querySelector('.price').value
 
-    if (messages.length > 0) {
-        event.preventDefault()
-        errorElement.innerText = messages.join(', ')
-    }
 
     fetch('https://dummyjson.com/products/add', {
         method: 'POST',
@@ -121,9 +128,8 @@ formElement.addEventListener("click", (event) => {
             </div>`
 
         })
-}
-)
 
+})
 
 
 /*previewImage = (event) => {
