@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container sign-in">
+        <form id="login-form">
+          <h1>Sign In</h1>
+          <label for="username">Username</label>
+          <input type="text" class="username" id="username" placeholder="Enter your username" />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="password"
+            id="password"
+            placeholder="Enter your password"
+          />
+          <button type="submit" id="sign-in">
+            Sign In
+          </button>
+        </form>
+      </div>
+      <div class="form-container sign-up">
+        <form>
+          <h1>Sign Up</h1>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            required
+          />
+          <button type="submit" id="sign-up">
+            Sign Up
+          </button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-right">
+            <img src="logo-eagle.png" class="side-image" />
+            <h1>Welcome to the Products</h1>
+            <p>Sign in to view all the products and order them</p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+          <div class="toggle-panel toggle-left">
+            <img src="logo-eagle.png" class="side-image" />
+            <h1>New to the Products?</h1>
+            <p>Sign up to create a new account</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -3,6 +3,12 @@ const addProductButton = document.querySelector("[open-modal-button]")
 const modal = document.querySelector(".modal-dialog")
 const saveChangesButton = document.getElementById('save-changes')
 
+document.addEventListener("DOMContentLoaded", (event) => {
+    if (!localStorage.getItem("token")) {
+        window.location.href = "./login.html"
+    }
+})
+
 loadData = () => {
     fetch("https://dummyjson.com/products")
         .then((res) => res.json())
@@ -22,7 +28,7 @@ loadData = () => {
                                                         </div>
                                                         <div class="flip-card-back">
                                                             <p class="card-text">${item?.description}</p>
-                                                            <a href="#" id="${index}addCart" class="btn btn-primary card-button" onclick="handleAddCart()">Add To Cart</a>                                                       
+                                                            <button class="card-button" onclick="handleAddCart()">Add To Cart</button>                                                       
                                                         </div>
                                                     </div>
                                                 </div>
@@ -56,7 +62,7 @@ searchData = () => {
                                                         </div>
                                                         <div class="flip-card-back">
                                                             <p class="card-text">${item?.description}</p>
-                                                            <a href="#" id="${index}addCart" class="btn btn-primary card-button" onclick="handleAddCart()">Add To Cart</a>                                                       
+                                                            <button id="${index}addCart" class="card-button" onclick="handleAddCart()">Add To Cart</button>                                                       
                                                         </div>
                                                     </div>
                                                 </div>
@@ -121,7 +127,7 @@ saveChangesButton.addEventListener("click", (event) => {
                         </div>
                         <div class="flip-card-back">
                             <p class="card-text">${data.description}</p>
-                            <a href="#" class="btn btn-primary card-button" onclick="handleAddCart()">Add To Cart</a>                                                       
+                            <button class="card-button" onclick="handleAddCart()">Add To Cart</button>                                                       
                         </div>
                     </div>
                 </div>
@@ -130,6 +136,11 @@ saveChangesButton.addEventListener("click", (event) => {
         })
 
 })
+
+logout = () => {
+    localStorage.clear()
+    window.location.href = "./login.html"
+}
 
 
 /*previewImage = (event) => {
