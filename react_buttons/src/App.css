@@ -1,0 +1,16 @@
+.btn-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  flex-direction: column;
+  gap: 100px;
+}
