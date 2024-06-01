@@ -11,6 +11,7 @@ function App() {
         <ButtonFactory type="loading"/>
         <ButtonFactory type="play"/>
         <ButtonFactory type="logout"/>
+        <ButtonFactory type="love"/>
         <ButtonFactory />
       </div>
     </>

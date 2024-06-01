@@ -3,3 +3,24 @@
     height: 36px;
     padding: 5px;
 }
+
+.hand-scissors {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.love {
+    transition: .2s linear;
+}
+
+.love path {
+    transition: .2s linear;
+}
+
+.love:hover {
+    transform: scale(1.2)
+}
+
+.love:hover path {
+    fill: red;
+}

@@ -6,18 +6,151 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    border-radius: 18px;
+    text-transform: uppercase;
     font-family: "Roboto Mono", monospace;
 }
 
 .subscribe {
+    position: relative;
     background-color: red;
     border: red;
-    transition-duration: 0.8s;
+    border-radius: 18px;
+    opacity: 1;
+    box-shadow: brown 0px 7px 2px, #000 0px 8px 5px;   
+    transition: 0.2s;
+}
+
+.subscribe:hover {
+    background: hsl(0, 75%, 60%);
 }
 
 .subscribe:active {
-    background-image: linear-gradient(90deg, #53cbef 0%, #dcc66c 50%, #ffa3b6 75%, #53cbef 100%);
-    color: #000;
-    transition: 1000ms;
+    top: 4px;
+    box-shadow: brown 0px 3px 2px, #000 0px 4px 5px;
+}
+
+.download {
+    background: transparent;
+    color: purple;
+    border: 2px solid purple;
+    font-weight: bold;
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.download:hover {
+    color: white;
+    box-shadow: 0 8px #ce1fcbe6;
+    transform: translateY(-8px);
+}
+
+.download::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: purple;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.download:hover::before {
+    width: 160%;
+}
+
+.download:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.loading {
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.loading:hover {
+    width: auto;
+    border-radius: 8px;
+    transition-duration: .3s;
+    background-color: greenyellow;
+    align-items: center;
+}
+
+.loading::after {
+    content: "";
+    color: black;
+    transition-duration: .3s;
+    z-index: 1;
+}
+
+.loading:hover::after {
+    content: "LOADING";
+    font-size: 28px;
+    opacity: 1;
+    transition: .3s ease-out;
+}
+
+.play {
+    background: linear-gradient(135deg, #d85fe6, #fff, #d84e54);
+    border-radius: 40px;
+    color: rgb(90, 49, 89);
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.play:hover {
+    background: linear-gradient(135deg, #fff , #d85fe6 5%, #d84e54,#fff);
+}
+
+.logout {
+    background: rgb(109, 109, 255);
+}
+
+.logout:hover {
+    border: solid 2px black;
+    background: rgb(144, 144, 255);
+}
+
+.love {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    flex-direction: column;
+}
+
+.love::after {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    font-size: 15px;
+    color: white;
+}
+
+.love-count {
+    visibility: hidden;
+}
+
+.love:hover > .love-count {
+    visibility: visible;
+}
+
+.default {
+    background-image: url('https://media.giphy.com/media/l3vRo6ES12cie0JYA/giphy.gif?cid=ecf05e47mif39u6jxo76t0dm9hyihj2usek7ti73jmj58oc8&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+    font-weight: bold;
+    letter-spacing: 3px;
+    box-shadow: none;
+}
+
+.default:active {
+    box-shadow: 4px 0 5px 5px red, 0 8px 5px 5px blue;
 }
