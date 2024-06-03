@@ -1,0 +1,8 @@
+.cart-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    background: linear-gradient(to right, #2ae32a, green);
+    border: 2px solid black;
+}

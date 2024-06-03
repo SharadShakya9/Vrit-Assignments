@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.card {
+    width: 270px;
+    height: 360px;
+    margin: 10px;
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1b2838, white, #1b2838);
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    height: 170px;
+    object-fit: fill;
+    padding: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-content {
+    padding: 0 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h1 {
+    margin: 5px 0;
+    font-size: 22px;
+    overflow: hidden;
+}
+
+.description {
+    padding: 5px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    height: calc(1.4em * 3);
+}
+
+.description:hover {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    box-orient: unset;
+    height: auto;
+}
+
+.price-tag {
+    width: 150px;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 22px;
+    color: #eee;
+    padding: 0;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    width: 50%;
+    background-color: rgba(9, 9, 9, 0.767);
+}
+
+.cart-button {
+    width: 50%;
+    display: flex;
+}
