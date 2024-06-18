@@ -17,6 +17,15 @@
     position: relative;
 }
 
+.card:hover {
+    transform: scale(1.05);
+    border-top: 2px solid gold;
+    border-left: 2px solid gold;
+    border-bottom: 2px solid rgb(38, 125, 246);
+    border-right: 2px solid rgb(38, 125, 246);
+    box-shadow: 3px 3px 8px 2px rgb(38, 125, 246), -3px -3px 8px 2px rgb(246, 214, 38) ;
+}
+
 .card img {
     height: 170px;
     object-fit: fill;
